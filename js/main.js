@@ -597,10 +597,29 @@
         });
     }
 
+    function initHeaderScrollState() {
+        const header = document.querySelector('.site-header');
+
+        if (!header) {
+            return;
+        }
+
+        function updateHeaderState() {
+            header.classList.toggle('is-scrolled', window.scrollY > 24);
+        }
+
+        updateHeaderState();
+
+        window.addEventListener('scroll', updateHeaderState, {
+            passive: true
+        });
+    }
+
     function init() {
         renderServiceLists();
         renderLegalLinks();
         applyConfigText();
+        initHeaderScrollState();
         applyContactLinks();
         applyCurrentYear();
         setActiveNavigation();
