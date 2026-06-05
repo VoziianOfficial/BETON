@@ -845,8 +845,6 @@ a:hover .step-icon,
     overflow: hidden;
     color: var(--color-text-light);
     background-color: var(--color-black);
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
 }
 
 .page-hero::before {
