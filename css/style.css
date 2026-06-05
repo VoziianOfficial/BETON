@@ -1703,3 +1703,57 @@ section[id],
     border-color: var(--color-border-dark);
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
 }
+
+
+.concrete-marquee--icons {
+    background:
+        linear-gradient(180deg, rgba(255, 210, 51, 0.85), rgba(255, 210, 51, 0.85)) top / 100% 1px no-repeat,
+        linear-gradient(180deg, rgba(255, 210, 51, 0.85), rgba(255, 210, 51, 0.85)) bottom / 100% 1px no-repeat,
+        linear-gradient(90deg, #050505, #101012, #050505);
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.concrete-marquee--icons .concrete-marquee__group {
+    gap: 24px;
+    padding: 12px 26px;
+}
+
+.concrete-marquee--icons .concrete-marquee__item {
+    gap: 0;
+    font-size: clamp(18px, 1.6vw, 24px);
+}
+
+.concrete-marquee--icons .concrete-marquee__icon {
+    width: 38px;
+    height: 38px;
+    color: var(--color-orange);
+    flex: 0 0 auto;
+    filter: drop-shadow(0 0 10px rgba(255, 122, 26, 0.28));
+}
+
+.concrete-marquee--icons .concrete-marquee__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.concrete-marquee--icons .concrete-marquee__icon svg * {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.concrete-marquee--icons .concrete-marquee__dot {
+    width: 7px;
+    height: 7px;
+    background: var(--color-orange);
+    box-shadow: 0 0 14px rgba(255, 122, 26, 0.55);
+}
+
+.concrete-marquee--icons .concrete-marquee__item span {
+    color: var(--color-text-light);
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
