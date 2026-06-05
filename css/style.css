@@ -2373,3 +2373,77 @@ section[id],
     }
 }
 
+@media (max-width: 680px) {
+
+    h1,
+    .page-hero h1 {
+        font-size: clamp(28px, 8.2vw, 40px);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+        text-align: center;
+    }
+
+    h2,
+    .section h2,
+    .section-heading h2 {
+        font-size: clamp(24px, 7vw, 32px);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        text-align: center;
+    }
+
+    .page-hero__content,
+    .section-heading {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .page-hero p,
+    .section-heading p {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+
+    h1,
+    .page-hero h1 {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(38px, 6vw, 58px);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        text-align: center;
+    }
+
+    .page-hero__content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-hero p {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .page-hero__kicker {
+        justify-content: center;
+    }
+
+    .page-hero .btn-group {
+        justify-content: center;
+    }
+
+    .hero-chips {
+        justify-content: center;
+        text-align: center;
+    }
+}
