@@ -1757,3 +1757,449 @@ section[id],
     -webkit-text-stroke: 0;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
+
+/* =========================
+   Verification circles redesign
+========================= */
+
+.verification-strip {
+    overflow: hidden;
+}
+
+.verification-line {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(210px, 1fr));
+    gap: clamp(22px, 3vw, 38px);
+    align-items: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Тонкая базовая линия между кругами */
+.verification-line::before {
+    content: "";
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 50%;
+    height: 1px;
+    z-index: 0;
+    background: rgba(255, 122, 26, 0.24);
+    transform: translateY(-50%);
+}
+
+/* Движущаяся оранжево-желтая линия */
+.verification-line::after {
+    content: "";
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 50%;
+    height: 2px;
+    z-index: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 122, 26, 0) 20%,
+            rgba(255, 122, 26, 0.9) 42%,
+            rgba(255, 210, 51, 1) 50%,
+            rgba(255, 122, 26, 0.9) 58%,
+            rgba(255, 122, 26, 0) 80%,
+            transparent 100%);
+    background-size: 180% 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 122, 26, 0.42));
+    transform: translateY(-50%);
+    animation: verificationLineFlow 3.2s linear infinite;
+}
+
+.verification-line article {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 275px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    margin-inline: auto;
+    padding: 34px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    border: 2px solid rgba(255, 122, 26, 0.72);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 32% 20%, rgba(255, 210, 51, 0.22), transparent 31%),
+        radial-gradient(circle at 82% 78%, rgba(255, 122, 26, 0.18), transparent 36%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 239, 222, 0.92));
+    box-shadow:
+        0 22px 60px rgba(17, 17, 19, 0.12),
+        inset 0 0 0 8px rgba(255, 122, 26, 0.045);
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+/* Убираем старую линию сверху из прошлых стилей */
+.verification-line article::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    width: auto;
+    height: auto;
+    left: 14px;
+    top: 14px;
+    border: 1px solid rgba(255, 122, 26, 0.18);
+    border-radius: 50%;
+    background: transparent;
+    transform: none;
+}
+
+/* Блик внутри круга */
+.verification-line article::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -1;
+    background: linear-gradient(110deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.34) 46%,
+            transparent 58%);
+    transform: translateX(-120%) rotate(12deg);
+    transition: transform 680ms ease;
+}
+
+.verification-line article:hover {
+    transform: translateY(-8px) scale(1.035);
+    border-color: var(--color-orange);
+    background:
+        radial-gradient(circle at 30% 18%, rgba(255, 210, 51, 0.3), transparent 32%),
+        radial-gradient(circle at 82% 78%, rgba(255, 122, 26, 0.28), transparent 38%),
+        linear-gradient(145deg, #FFFFFF, #FFF1E5);
+    box-shadow:
+        0 28px 76px rgba(255, 122, 26, 0.22),
+        0 18px 48px rgba(17, 17, 19, 0.13),
+        inset 0 0 0 8px rgba(255, 122, 26, 0.07);
+}
+
+.verification-line article:hover::after {
+    transform: translateX(120%) rotate(12deg);
+}
+
+.verification-line h3 {
+    position: relative;
+    margin: 0;
+    max-width: 210px;
+    color: var(--color-text-dark);
+    font-size: clamp(19px, 1.8vw, 25px);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.verification-line h3::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-orange), var(--color-yellow));
+}
+
+.verification-line p {
+    position: relative;
+    max-width: 205px;
+    margin: 13px 0 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+/* Небольшое живое свечение у разных кругов */
+.verification-line article:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.verification-line article:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.verification-line article:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.verification-line article:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+@keyframes verificationLineFlow {
+    from {
+        background-position: 180% 0;
+    }
+
+    to {
+        background-position: -180% 0;
+    }
+}
+
+@media (max-width: 1120px) {
+    .verification-line {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 28px;
+    }
+
+    .verification-line::before,
+    .verification-line::after {
+        display: none;
+    }
+
+    .verification-line article,
+    .verification-line article:nth-child(1),
+    .verification-line article:nth-child(2) {
+        border-right: 2px solid rgba(255, 122, 26, 0.72);
+        border-bottom: 2px solid rgba(255, 122, 26, 0.72);
+    }
+}
+
+@media (max-width: 620px) {
+    .verification-line {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .verification-line article,
+    .verification-line article:nth-child(1),
+    .verification-line article:nth-child(2) {
+        width: min(100%, 310px);
+        border: 2px solid rgba(255, 122, 26, 0.72);
+    }
+}
+
+@media (max-width: 390px) {
+    .verification-line article {
+        width: 100%;
+        aspect-ratio: auto;
+        min-height: 260px;
+        border-radius: 34px;
+    }
+
+    .verification-line article::before {
+        border-radius: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .verification-line::after {
+        animation: none;
+    }
+}
+
+/* Clean premium verification circles */
+
+.verification-line {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(210px, 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    align-items: center;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Static thin base line */
+.verification-line::before {
+    content: "";
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 50%;
+    height: 1px;
+    z-index: 0;
+    background: rgba(217, 93, 0, 0.34);
+    transform: translateY(-50%);
+}
+
+/* Moving accent line */
+.verification-line::after {
+    content: "";
+    position: absolute;
+    left: 9%;
+    right: 9%;
+    top: 50%;
+    height: 2px;
+    z-index: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            transparent 22%,
+            var(--color-orange) 46%,
+            var(--color-yellow) 50%,
+            var(--color-orange) 54%,
+            transparent 78%,
+            transparent 100%);
+    background-size: 190% 100%;
+    transform: translateY(-50%);
+    animation: verificationLineFlow 3s linear infinite;
+}
+
+.verification-line article {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 275px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    margin-inline: auto;
+    padding: 34px 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    border: 3px solid var(--color-orange);
+    border-radius: 50%;
+    background: #FFF8EF;
+    box-shadow:
+        0 22px 52px rgba(17, 17, 19, 0.12),
+        0 0 0 8px rgba(255, 122, 26, 0.08);
+
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+/* Inner thin ring, no gradients */
+.verification-line article::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    width: auto;
+    height: auto;
+    left: 13px;
+    top: 13px;
+    border: 1px solid rgba(255, 122, 26, 0.34);
+    border-radius: 50%;
+    background: transparent;
+    transform: none;
+}
+
+/* Remove old shiny highlight completely */
+.verification-line article::after {
+    display: none;
+}
+
+.verification-line article:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: var(--color-orange);
+    border-color: var(--color-orange-deep);
+    box-shadow:
+        0 30px 70px rgba(255, 122, 26, 0.34),
+        0 0 0 10px rgba(255, 122, 26, 0.12);
+}
+
+.verification-line article:hover::before {
+    border-color: rgba(255, 255, 255, 0.36);
+}
+
+.verification-line h3 {
+    position: relative;
+    max-width: 210px;
+    margin: 0;
+    color: var(--color-text-dark);
+    font-size: clamp(19px, 1.8vw, 25px);
+    line-height: 1.08;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    transition: color var(--transition);
+}
+
+.verification-line h3::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 999px;
+    background: var(--color-orange);
+    transition:
+        background var(--transition),
+        width var(--transition);
+}
+
+.verification-line p {
+    position: relative;
+    max-width: 205px;
+    margin: 13px 0 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.45;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.verification-line article:hover h3,
+.verification-line article:hover p {
+    color: var(--color-white);
+}
+
+.verification-line article:hover h3::after {
+    width: 60px;
+    background: var(--color-yellow);
+}
+
+@keyframes verificationLineFlow {
+    from {
+        background-position: 190% 0;
+    }
+
+    to {
+        background-position: -190% 0;
+    }
+}
+
+@media (max-width: 1120px) {
+    .verification-line {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 28px;
+    }
+
+    .verification-line::before,
+    .verification-line::after {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .verification-line {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .verification-line article {
+        width: min(100%, 310px);
+    }
+}
+
+@media (max-width: 390px) {
+    .verification-line article {
+        width: 100%;
+        aspect-ratio: auto;
+        min-height: 260px;
+        border-radius: 34px;
+    }
+
+    .verification-line article::before {
+        border-radius: 28px;
+    }
+}
+
