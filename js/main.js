@@ -294,7 +294,13 @@
         createCookieBanner();
 
         const banner = document.querySelector(selectors.cookieBanner);
-        const savedChoice = localStorage.getItem('betonCookieConsent');
+        let savedChoice = null;
+
+        try {
+            savedChoice = localStorage.getItem('betonCookieConsent');
+        } catch (error) {
+            savedChoice = null;
+        }
 
         if (!banner || savedChoice) {
             return;
@@ -306,7 +312,12 @@
             button.addEventListener('click', () => {
                 const choice = button.getAttribute('data-cookie-choice');
 
-                localStorage.setItem('betonCookieConsent', choice || 'decline');
+                try {
+                    localStorage.setItem('betonCookieConsent', choice || 'decline');
+                } catch (error) {
+                    // Ignore storage failures and still hide the banner.
+                }
+
                 banner.classList.remove('is-visible');
             });
         });
@@ -314,6 +325,7 @@
 
     function openMobileMenu(toggle, menu) {
         toggle.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
         menu.classList.add('is-open');
         document.body.classList.add('menu-open');
 
@@ -326,6 +338,7 @@
 
     function closeMobileMenu(toggle, menu) {
         toggle.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
         menu.classList.remove('is-open');
         document.body.classList.remove('menu-open');
         toggle.focus();
@@ -477,8 +490,10 @@
                 if (!field.checkValidity()) {
                     isValid = false;
                     field.classList.add('is-invalid');
+                    field.setAttribute('aria-invalid', 'true');
                 } else {
                     field.classList.remove('is-invalid');
+                    field.removeAttribute('aria-invalid');
                 }
             });
 
@@ -504,6 +519,7 @@
         form.querySelectorAll('input, textarea, select').forEach((field) => {
             field.addEventListener('input', () => {
                 field.classList.remove('is-invalid');
+                field.removeAttribute('aria-invalid');
 
                 if (successMessage) {
                     successMessage.hidden = true;

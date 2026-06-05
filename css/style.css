@@ -255,9 +255,12 @@ p {
 ========================= */
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 1400;
+    width: 100%;
     padding: 12px 0;
     background: rgba(5, 5, 5, 0.78);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1646,3 +1649,35 @@ a:hover .step-icon,
         transition-duration: 0.001ms !important;
     }
 }
+
+body {
+    padding-top: 96px;
+}
+@media (max-width: 920px) {
+    body {
+        padding-top: 88px;
+    }
+}
+
+@media (max-width: 680px) {
+    body {
+        padding-top: 82px;
+    }
+}
+section[id],
+#contact-form,
+#how-it-works,
+#faq {
+    scroll-margin-top: 120px;
+}
+
+@media (max-width: 680px) {
+
+    section[id],
+    #contact-form,
+    #how-it-works,
+    #faq {
+        scroll-margin-top: 96px;
+    }
+}
+
