@@ -2203,3 +2203,77 @@ section[id],
     }
 }
 
+/* More width for verification section heading */
+.verification-strip .section-heading {
+    max-width: 980px;
+}
+
+.verification-strip .section-heading h2 {
+    max-width: 980px;
+    margin-inline: auto;
+}
+
+/* Clean hover transition fix */
+.verification-line article {
+    isolation: isolate;
+    background: #FFF8EF;
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+/* Solid orange fill layer, without cheap gradients/blinks */
+.verification-line article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    border-radius: inherit;
+    background: var(--color-orange);
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+
+/* Inner ring stays above orange fill */
+.verification-line article::before {
+    z-index: 1;
+}
+
+/* Text stays dark until orange bg is already visible */
+.verification-line h3,
+.verification-line p {
+    z-index: 2;
+    transition: color 120ms ease;
+}
+
+.verification-line h3::after {
+    transition:
+        background 120ms ease,
+        width 160ms ease;
+}
+
+.verification-line article:hover {
+    border-color: var(--color-orange-deep);
+    box-shadow:
+        0 30px 70px rgba(255, 122, 26, 0.28),
+        0 0 0 10px rgba(255, 122, 26, 0.11);
+}
+
+.verification-line article:hover::after {
+    opacity: 1;
+}
+
+.verification-line article:hover h3,
+.verification-line article:hover p {
+    color: var(--color-white);
+    transition-delay: 90ms;
+}
+
+.verification-line article:hover h3::after {
+    width: 60px;
+    background: var(--color-yellow);
+    transition-delay: 90ms;
+}
+

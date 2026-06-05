@@ -499,9 +499,6 @@
         transform var(--transition);
 }
 
-.verification-line article:last-child {
-    border-right: 0;
-}
 
 .verification-line article::before {
     content: "";
