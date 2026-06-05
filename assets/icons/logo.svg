@@ -1,0 +1,66 @@
+<svg width="520" height="160" viewBox="0 0 520 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="betonConcrete" x1="20" y1="20" x2="130" y2="140" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D7D7DA"/>
+            <stop offset="45%" stop-color="#8E8E94"/>
+            <stop offset="100%" stop-color="#4A4A4D"/>
+        </linearGradient>
+
+        <linearGradient id="betonDarkConcrete" x1="40" y1="30" x2="120" y2="130" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#6B6B70"/>
+            <stop offset="100%" stop-color="#2B2B2D"/>
+        </linearGradient>
+
+        <linearGradient id="betonOrange" x1="50" y1="35" x2="135" y2="120" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FF9A2F"/>
+            <stop offset="100%" stop-color="#FF6A00"/>
+        </linearGradient>
+
+        <linearGradient id="betonYellow" x1="35" y1="30" x2="115" y2="115" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFE45C"/>
+            <stop offset="100%" stop-color="#FFD233"/>
+        </linearGradient>
+
+        <filter id="betonShadow" x="0" y="0" width="170" height="170" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+    </defs>
+
+    <g filter="url(#betonShadow)">
+        <path d="M78 18L126 45L80 72L32 45L78 18Z" fill="url(#betonConcrete)"/>
+        <path d="M32 45L80 72V121L32 94V45Z" fill="url(#betonDarkConcrete)"/>
+        <path d="M80 72L126 45V94L80 121V72Z" fill="url(#betonOrange)"/>
+        <path d="M62 47L80 37L99 47L80 58L62 47Z" fill="#18181B" opacity="0.88"/>
+        <path d="M61 82L80 71L100 82L80 94L61 82Z" fill="#18181B" opacity="0.88"/>
+        <path d="M111 54L126 45V61L111 70V54Z" fill="url(#betonYellow)"/>
+        <path d="M94 104L110 95V111L94 120V104Z" fill="url(#betonYellow)"/>
+        <circle cx="55" cy="48" r="2" fill="#FFFFFF" opacity="0.22"/>
+        <circle cx="96" cy="39" r="1.8" fill="#FFFFFF" opacity="0.18"/>
+        <circle cx="48" cy="86" r="1.8" fill="#FFFFFF" opacity="0.16"/>
+        <circle cx="99" cy="83" r="1.6" fill="#000000" opacity="0.18"/>
+        <circle cx="70" cy="108" r="1.7" fill="#FFFFFF" opacity="0.14"/>
+    </g>
+
+    <g>
+        <text x="160" y="78"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="52"
+              font-weight="900"
+              letter-spacing="2"
+              fill="#FFFFFF">
+            BETON
+        </text>
+
+        <text x="164" y="106"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="13"
+              font-weight="800"
+              letter-spacing="4"
+              fill="#FF7A1A">
+            CONCRETE SERVICE
+        </text>
+
+        <path d="M164 119H250" stroke="#FFD233" stroke-width="4" stroke-linecap="round"/>
+        <path d="M260 119H292" stroke="#FF7A1A" stroke-width="4" stroke-linecap="round"/>
+    </g>
+</svg>
