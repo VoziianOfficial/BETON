@@ -1461,8 +1461,6 @@ a:hover .step-icon,
 
     .page-hero {
         min-height: 560px;
-        border-bottom-left-radius: 28px;
-        border-bottom-right-radius: 28px;
     }
 
     .page-hero::before {
@@ -1520,8 +1518,6 @@ a:hover .step-icon,
 
     .page-hero {
         min-height: 560px;
-        border-bottom-left-radius: 22px;
-        border-bottom-right-radius: 22px;
     }
 
     .page-hero h1 {
@@ -2338,3 +2334,42 @@ section[id],
 .home-final-cta .btn-group .btn {
     white-space: nowrap;
 }
+
+@media (max-width: 900px) {
+    .home-final-cta {
+        padding: 42px 0;
+    }
+
+    .home-final-cta .cta-card__content {
+        grid-template-columns: 1fr;
+    }
+
+    .home-final-cta .section-kicker,
+    .home-final-cta h2,
+    .home-final-cta .cta-card p,
+    .home-final-cta .btn-group {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .home-final-cta .btn-group {
+        min-width: 0;
+        margin-top: 8px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .home-final-cta {
+        padding: 34px 0;
+    }
+
+    .home-final-cta .cta-card__content {
+        padding: 28px 20px;
+    }
+
+    .home-final-cta h2 {
+        font-size: clamp(28px, 9vw, 38px);
+    }
+}
+
