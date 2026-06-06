@@ -2488,3 +2488,30 @@ section[id],
         margin-top: 22px;
     }
 }
+
+/* Hide visual scrollbar inside burger menu, but keep scrolling */
+
+.mobile-menu,
+.mobile-menu__content,
+.mobile-menu__services,
+.mobile-menu__service-list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.mobile-menu::-webkit-scrollbar,
+.mobile-menu__content::-webkit-scrollbar,
+.mobile-menu__services::-webkit-scrollbar,
+.mobile-menu__service-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.mobile-menu__content {
+    padding-right: 18px;
+}
+
+.mobile-menu__service-list a {
+    padding-right: 18px;
+}
