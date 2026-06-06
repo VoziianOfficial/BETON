@@ -2476,3 +2476,15 @@ section[id],
     transform: none !important;
     visibility: visible !important;
 }
+
+.site-footer .footer-legal-title {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 680px) {
+    .site-footer .footer-legal-title {
+        margin-top: 22px;
+    }
+}
