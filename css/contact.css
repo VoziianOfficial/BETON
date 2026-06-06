@@ -2,9 +2,6 @@
     --hero-image: url("../assets/images/hero-contact.jpg");
 }
 
-/* =========================
-   Before request checklist
-========================= */
 
 .request-checklist {
     overflow: hidden;
@@ -61,9 +58,6 @@
     height: 52px;
 }
 
-/* =========================
-   Contact form
-========================= */
 
 .contact-form-section {
     overflow: hidden;
@@ -287,9 +281,6 @@
     background: #F8D7DA;
 }
 
-/* =========================
-   Contact info
-========================= */
 
 .contact-info-section {
     overflow: hidden;
@@ -360,9 +351,6 @@
     color: var(--color-orange-deep);
 }
 
-/* =========================
-   Abstract location card
-========================= */
 
 .abstract-location-card {
     min-height: 560px;
@@ -495,9 +483,6 @@
     }
 }
 
-/* =========================
-   Request path
-========================= */
 
 .request-path {
     overflow: hidden;
@@ -555,9 +540,6 @@
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Bottom CTA strip
-========================= */
 
 .contact-bottom-cta {
     padding: 56px 0;
@@ -587,9 +569,6 @@
     margin-bottom: 12px;
 }
 
-/* =========================
-   Reveal
-========================= */
 
 .contact-reveal {
     opacity: 0;
@@ -604,9 +583,6 @@
     transform: translateY(0);
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1120px) {
 
@@ -800,9 +776,6 @@
 }
 
 
-/* =========================
-   Contact details strip
-========================= */
 
 .contact-details-strip {
     position: relative;
@@ -848,7 +821,6 @@
     color: var(--color-text-muted);
 }
 
-/* Right side: clean contact rows */
 .contact-details-strip__list {
     display: grid;
     border-top: 1px solid rgba(17, 17, 19, 0.12);
@@ -971,7 +943,6 @@
     }
 }
 
-/* Contact details strip — dark version */
 
 .contact-details-strip {
     background:
@@ -1024,9 +995,6 @@
     color: var(--color-yellow);
 }
 
-/* =========================
-   Request flow band
-========================= */
 
 .request-flow-band {
     position: relative;
@@ -1075,7 +1043,6 @@
     color: var(--color-text-light-muted);
 }
 
-/* правая часть без карточек */
 .request-flow-band__steps {
     position: relative;
     display: grid;
@@ -1234,7 +1201,6 @@
     }
 }
 
-/* Mobile compact checklist rows */
 
 @media (max-width: 680px) {
     .request-checklist {

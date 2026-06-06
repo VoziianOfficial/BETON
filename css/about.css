@@ -6,9 +6,6 @@
     --cta-image: url("../assets/images/cta-concrete.jpg");
 }
 
-/* =========================
-   About platform
-========================= */
 
 .about-platform {
     overflow: hidden;
@@ -86,9 +83,6 @@
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Clickable service marquee
-========================= */
 
 .about-service-marquee .concrete-marquee__item {
     transition:
@@ -105,9 +99,6 @@
     -webkit-text-stroke-color: var(--color-orange);
 }
 
-/* =========================
-   Pour process line
-========================= */
 
 .pour-process {
     overflow: hidden;
@@ -194,9 +185,6 @@
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Local matching diagram
-========================= */
 
 .local-matching {
     overflow: hidden;
@@ -391,9 +379,6 @@
     }
 }
 
-/* =========================
-   About story
-========================= */
 
 .about-story {
     overflow: hidden;
@@ -474,9 +459,6 @@
     background: linear-gradient(90deg, var(--color-orange), var(--color-yellow));
 }
 
-/* =========================
-   About reveal
-========================= */
 
 .about-reveal {
     opacity: 0;
@@ -491,9 +473,6 @@
     transform: translateY(0);
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1120px) {
 
@@ -695,9 +674,6 @@
     }
 }
 
-/* =========================
-   About platform ribbon section
-========================= */
 
 .about-platform--ribbon {
     position: relative;
@@ -730,7 +706,6 @@
     align-items: center;
 }
 
-/* Left content */
 .about-platform--ribbon .about-platform__content {
     max-width: 620px;
 }
@@ -749,7 +724,6 @@
     color: var(--color-text-muted);
 }
 
-/* Right ribbon */
 .about-platform--ribbon .about-platform__panel {
     position: relative;
     display: grid;
@@ -761,7 +735,6 @@
     box-shadow: none;
 }
 
-/* Moving thin line behind the rows */
 .about-platform--ribbon .about-platform__panel::before {
     content: "";
     position: absolute;
@@ -796,7 +769,6 @@
     animation: aboutRibbonLine 3.4s linear infinite;
 }
 
-/* Items as horizontal ribbon rows */
 .about-platform--ribbon .about-platform__panel article {
     position: relative;
     z-index: 1;
@@ -825,7 +797,6 @@
     border-radius: 0 0 28px 28px;
 }
 
-/* Orange number circle */
 .about-platform--ribbon .about-platform__panel article>span {
     position: absolute;
     left: 24px;
@@ -866,7 +837,6 @@
     line-height: 1.45;
 }
 
-/* Hover */
 .about-platform--ribbon .about-platform__panel article:hover {
     transform: translateX(8px);
     background:
@@ -958,9 +928,6 @@
     }
 }
 
-/* =========================
-   Pour process — big roomy slabs
-========================= */
 
 .pour-process {
     position: relative;
@@ -986,7 +953,6 @@
     margin-inline: auto;
 }
 
-/* Большая сетка 2x2 вместо сжатых 4 карточек */
 .pour-process .process-line {
     margin-top: 44px;
     display: grid !important;
@@ -1001,7 +967,6 @@
     display: none !important;
 }
 
-/* Большие широкие карточки */
 .pour-process .process-line__item {
     position: relative;
     min-height: 120px !important;
@@ -1030,7 +995,6 @@
         background var(--transition) !important;
 }
 
-/* Большой декоративный номер слева */
 .pour-process .process-line__item>span {
     position: absolute !important;
     left: 30px !important;
@@ -1054,7 +1018,6 @@
     z-index: 3 !important;
 }
 
-/* Большая фоновая цифра */
 .pour-process .process-line__item::before {
     content: attr(data-step);
     display: block !important;
@@ -1074,7 +1037,6 @@
     background: none !important;
 }
 
-/* Оранжевая линия сбоку */
 .pour-process .process-line__item::after {
     content: "";
     display: block !important;
@@ -1125,7 +1087,6 @@
     z-index: 3;
 }
 
-/* Красивый, но не агрессивный hover */
 .pour-process .process-line__item:hover {
     transform: translateY(-6px) !important;
     border-color: rgba(255, 122, 26, 0.46) !important;
@@ -1202,9 +1163,6 @@
     }
 }
 
-/* =========================
-   Local signal section
-========================= */
 
 .local-signal-section {
     position: relative;

@@ -6,9 +6,6 @@
     --cta-image: url("../assets/images/cta-concrete.jpg");
 }
 
-/* =========================
-   Services cards
-========================= */
 
 .services-cards-section {
     overflow: hidden;
@@ -140,9 +137,6 @@
     transform: translateX(5px);
 }
 
-/* =========================
-   Photo belt
-========================= */
 
 .photo-belt-section {
     overflow: hidden;
@@ -227,9 +221,6 @@
     }
 }
 
-/* =========================
-   Aggregator panel
-========================= */
 
 .aggregator-panel-section {
     overflow: hidden;
@@ -361,9 +352,6 @@
     letter-spacing: -0.045em;
 }
 
-/* =========================
-   Services reveal
-========================= */
 
 .services-reveal {
     opacity: 0;
@@ -378,9 +366,6 @@
     transform: translateY(0);
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1180px) {
     .services-card-grid {
@@ -565,9 +550,6 @@
     }
 }
 
-/* =========================
-   Services square showcase — final clean version
-========================= */
 
 .services-square-showcase {
     overflow: hidden;
@@ -638,7 +620,6 @@
     line-height: 1;
 }
 
-/* Grid: здесь главный фикс — карточки не прижаты */
 .services-square-grid {
     min-width: 0;
     display: grid;
@@ -647,7 +628,6 @@
     align-items: stretch;
 }
 
-/* Square cards */
 .service-square-card {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -834,7 +814,6 @@
     transform: translateX(5px);
 }
 
-/* Layout breakpoints */
 @media (max-width: 1280px) {
     .services-square-layout {
         grid-template-columns: 1fr;
@@ -931,9 +910,6 @@
     }
 }
 
-/* =========================
-   Photo belt — equal premium cards
-========================= */
 
 .photo-belt-section {
     overflow: hidden;
@@ -962,7 +938,6 @@
     animation: photoBeltMove 36s linear infinite;
 }
 
-/* Все карточки одинаковые, без large/small/wide */
 .photo-belt__item,
 .photo-belt__item--large,
 .photo-belt__item--small,
@@ -1008,7 +983,6 @@
         radial-gradient(circle at 82% 14%, rgba(255, 122, 26, 0.22), transparent 28%);
 }
 
-/* Оранжевая линия сверху */
 .photo-belt__item {
     background:
         linear-gradient(90deg, var(--color-orange), transparent) top left / 62% 3px no-repeat,
@@ -1041,7 +1015,6 @@
     filter: saturate(1.08) contrast(1.08);
 }
 
-/* Небольшие подписи без изменения HTML */
 .photo-belt__item::marker {
     display: none;
 }
@@ -1085,7 +1058,6 @@
     text-transform: uppercase;
 }
 
-/* Декоративный угол */
 .photo-belt__item span {
     display: none;
 }
@@ -1130,7 +1102,6 @@
     }
 }
 
-/* Center photo belt heading */
 
 .photo-belt-section .section-heading {
     width: min(100% - 40px, 980px);
@@ -1169,9 +1140,6 @@
     }
 }
 
-/* =========================
-   Platform model section — clean rebuild
-========================= */
 
 .platform-model-section {
     overflow: hidden;
@@ -1188,7 +1156,6 @@
     align-items: stretch;
 }
 
-/* Левая часть — одна чистая панель, без карточек внутри */
 .platform-model__content {
     min-width: 0;
     min-height: 420px;
@@ -1218,7 +1185,6 @@
     line-height: 1.55;
 }
 
-/* Не карточки — просто красивые строки */
 .platform-model__list {
     margin-top: 26px;
     display: grid;
@@ -1266,7 +1232,6 @@
     line-height: 1.42;
 }
 
-/* Правая часть той же высоты, без вылезания */
 .platform-model__visual {
     position: relative;
     min-width: 0;
@@ -1419,9 +1384,6 @@
 }
 
 
-/* =========================
-   Services dark FAQ section
-========================= */
 
 .services-faq-dark {
     position: relative;
@@ -1548,9 +1510,6 @@
     }
 }
 
-/* =========================
-   Choice steps dark section
-========================= */
 
 .choice-steps-section {
     position: relative;
@@ -1790,8 +1749,7 @@
 
 @media (max-width: 680px) {
 
-    /* убираем цифры 01 / 02 / 03 */
-    .choice-step__top strong {
+        .choice-step__top strong {
         display: none;
     }
 
@@ -1805,8 +1763,7 @@
         display: block;
     }
 
-    /* иконка справа сверху */
-    .choice-step__icon {
+        .choice-step__icon {
         position: absolute;
         top: 18px;
         right: 18px;

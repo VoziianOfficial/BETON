@@ -6,47 +6,40 @@
 @import url("./legal.css");
 
 :root {
-    /* Dark base */
-    --color-black: #050505;
+        --color-black: #050505;
     --color-black-soft: #0B0B0C;
     --color-dark: #111113;
     --color-dark-card: #18181B;
     --color-dark-muted: #222226;
 
-    /* Concrete grays */
-    --color-concrete-deep: #2B2B2D;
+        --color-concrete-deep: #2B2B2D;
     --color-concrete: #4A4A4D;
     --color-concrete-medium: #6B6B70;
     --color-concrete-light: #A6A6AA;
     --color-concrete-soft: #D7D7DA;
 
-    /* Light sections */
-    --color-white: #FFFFFF;
+        --color-white: #FFFFFF;
     --color-light: #F7F7F4;
     --color-light-soft: #EFEFEB;
     --color-light-concrete: #E5E5E0;
     --color-border-light: #D8D8D2;
 
-    /* Orange accent */
-    --color-orange: #FF7A1A;
+        --color-orange: #FF7A1A;
     --color-orange-bright: #FF8F2A;
     --color-orange-deep: #D95D00;
     --color-orange-soft: #FFE1C7;
 
-    /* Yellow accent */
-    --color-yellow: #FFD233;
+        --color-yellow: #FFD233;
     --color-yellow-bright: #FFE45C;
     --color-yellow-deep: #E0A900;
     --color-yellow-soft: #FFF4BF;
 
-    /* Text */
-    --color-text-dark: #151515;
+        --color-text-dark: #151515;
     --color-text-muted: #66666A;
     --color-text-light: #F8F8F6;
     --color-text-light-muted: #B9B9BD;
 
-    /* Borders and shadows */
-    --color-border-dark: rgba(255, 255, 255, 0.12);
+        --color-border-dark: rgba(255, 255, 255, 0.12);
     --color-border-soft: rgba(5, 5, 5, 0.12);
     --shadow-dark: 0 24px 70px rgba(0, 0, 0, 0.38);
     --shadow-soft: 0 20px 60px rgba(17, 17, 19, 0.12);
@@ -250,9 +243,6 @@ p {
     color: var(--color-text-light-muted);
 }
 
-/* =========================
-   Header
-========================= */
 
 .site-header {
     position: fixed;
@@ -532,9 +522,6 @@ p {
     transform: rotate(-45deg);
 }
 
-/* =========================
-   Mobile menu
-========================= */
 
 .mobile-menu {
     position: fixed;
@@ -667,9 +654,6 @@ p {
     gap: 12px;
 }
 
-/* =========================
-   Buttons
-========================= */
 
 .btn {
     position: relative;
@@ -769,9 +753,6 @@ p {
     gap: 14px;
 }
 
-/* =========================
-   Icons
-========================= */
 
 .service-icon,
 .feature-icon,
@@ -833,9 +814,6 @@ a:hover .step-icon,
     filter: drop-shadow(0 10px 18px rgba(255, 122, 26, 0.22));
 }
 
-/* =========================
-   Hero common
-========================= */
 
 .page-hero {
     position: relative;
@@ -942,9 +920,6 @@ a:hover .step-icon,
     color: var(--color-orange);
 }
 
-/* =========================
-   Cards / panels
-========================= */
 
 .card {
     position: relative;
@@ -1020,9 +995,6 @@ a:hover .step-icon,
     pointer-events: none;
 }
 
-/* =========================
-   Marquee
-========================= */
 
 .concrete-marquee {
     overflow: hidden;
@@ -1091,9 +1063,6 @@ a:hover .step-icon,
     }
 }
 
-/* =========================
-   CTA before footer
-========================= */
 
 .cta-card {
     position: relative;
@@ -1146,9 +1115,6 @@ a:hover .step-icon,
     margin-top: 28px;
 }
 
-/* =========================
-   FAQ accordion
-========================= */
 
 .faq-list {
     display: grid;
@@ -1210,9 +1176,6 @@ a:hover .step-icon,
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Footer
-========================= */
 
 .site-footer {
     color: var(--color-text-light);
@@ -1296,9 +1259,6 @@ a:hover .step-icon,
     font-size: 13px;
 }
 
-/* =========================
-   Cookie banner
-========================= */
 
 .cookie-banner {
     position: fixed;
@@ -1368,9 +1328,6 @@ a:hover .step-icon,
     background: transparent;
 }
 
-/* =========================
-   Utility
-========================= */
 
 .visually-hidden {
     position: absolute;
@@ -1391,9 +1348,6 @@ a:hover .step-icon,
     display: none;
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1120px) {
     .header-shell {
@@ -1684,14 +1638,12 @@ section[id],
         backdrop-filter var(--transition);
 }
 
-/* При скролле убираем именно общий фон хедера */
 .site-header.is-scrolled {
     background: transparent;
     border-bottom-color: transparent;
     backdrop-filter: none;
 }
 
-/* Внутреннюю капсулу НЕ убираем */
 .site-header.is-scrolled .header-shell {
     background:
         linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 38%),
@@ -1754,9 +1706,6 @@ section[id],
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   Verification circles redesign
-========================= */
 
 .verification-strip {
     overflow: hidden;
@@ -1774,7 +1723,6 @@ section[id],
     box-shadow: none;
 }
 
-/* Тонкая базовая линия между кругами */
 .verification-line::before {
     content: "";
     position: absolute;
@@ -1787,7 +1735,6 @@ section[id],
     transform: translateY(-50%);
 }
 
-/* Движущаяся оранжево-желтая линия */
 .verification-line::after {
     content: "";
     position: absolute;
@@ -1842,7 +1789,6 @@ section[id],
         background var(--transition);
 }
 
-/* Убираем старую линию сверху из прошлых стилей */
 .verification-line article::before {
     content: "";
     position: absolute;
@@ -1857,7 +1803,6 @@ section[id],
     transform: none;
 }
 
-/* Блик внутри круга */
 .verification-line article::after {
     content: "";
     position: absolute;
@@ -1917,7 +1862,6 @@ section[id],
     line-height: 1.45;
 }
 
-/* Небольшое живое свечение у разных кругов */
 .verification-line article:nth-child(1) {
     animation-delay: 0s;
 }
@@ -1996,7 +1940,6 @@ section[id],
     }
 }
 
-/* Clean premium verification circles */
 
 .verification-line {
     position: relative;
@@ -2009,7 +1952,6 @@ section[id],
     box-shadow: none;
 }
 
-/* Static thin base line */
 .verification-line::before {
     content: "";
     position: absolute;
@@ -2022,7 +1964,6 @@ section[id],
     transform: translateY(-50%);
 }
 
-/* Moving accent line */
 .verification-line::after {
     content: "";
     position: absolute;
@@ -2074,7 +2015,6 @@ section[id],
         box-shadow var(--transition);
 }
 
-/* Inner thin ring, no gradients */
 .verification-line article::before {
     content: "";
     position: absolute;
@@ -2089,7 +2029,6 @@ section[id],
     transform: none;
 }
 
-/* Remove old shiny highlight completely */
 .verification-line article::after {
     display: none;
 }
@@ -2199,7 +2138,6 @@ section[id],
     }
 }
 
-/* More width for verification section heading */
 .verification-strip .section-heading {
     max-width: 980px;
 }
@@ -2209,7 +2147,6 @@ section[id],
     margin-inline: auto;
 }
 
-/* Clean hover transition fix */
 .verification-line article {
     isolation: isolate;
     background: #FFF8EF;
@@ -2219,7 +2156,6 @@ section[id],
         box-shadow 220ms ease;
 }
 
-/* Solid orange fill layer, without cheap gradients/blinks */
 .verification-line article::after {
     content: "";
     position: absolute;
@@ -2232,12 +2168,10 @@ section[id],
     transition: opacity 180ms ease;
 }
 
-/* Inner ring stays above orange fill */
 .verification-line article::before {
     z-index: 1;
 }
 
-/* Text stays dark until orange bg is already visible */
 .verification-line h3,
 .verification-line p {
     z-index: 2;
@@ -2273,9 +2207,6 @@ section[id],
     transition-delay: 90ms;
 }
 
-/* =========================
-   Home final CTA compact horizontal
-========================= */
 
 .home-final-cta {
     padding: 52px 0;
@@ -2448,7 +2379,6 @@ section[id],
     }
 }
 
-/* Disable delayed content reveal across the whole site */
 
 .services-reveal,
 .reveal,
@@ -2489,7 +2419,6 @@ section[id],
     }
 }
 
-/* Hide visual scrollbar inside burger menu, but keep scrolling */
 
 .mobile-menu,
 .mobile-menu__content,

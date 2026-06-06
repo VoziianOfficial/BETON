@@ -18,9 +18,6 @@
     --cta-image: url("../assets/images/cta-concrete.jpg");
 }
 
-/* =========================
-   Service intro
-========================= */
 
 .service-intro {
     overflow: hidden;
@@ -115,9 +112,6 @@
     transform: scale(1.05);
 }
 
-/* =========================
-   What homeowners compare
-========================= */
 
 .service-compare {
     overflow: hidden;
@@ -185,9 +179,6 @@
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Provider fit
-========================= */
 
 .provider-fit {
     overflow: hidden;
@@ -369,9 +360,6 @@
     }
 }
 
-/* =========================
-   Mini photo belt
-========================= */
 
 .service-photo-belt {
     overflow: hidden;
@@ -430,9 +418,6 @@
     }
 }
 
-/* =========================
-   Service FAQ
-========================= */
 
 .service-faq {
     overflow: hidden;
@@ -443,9 +428,6 @@
     margin-inline: auto;
 }
 
-/* =========================
-   Reveal
-========================= */
 
 .service-reveal {
     opacity: 0;
@@ -460,9 +442,6 @@
     transform: translateY(0);
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1120px) {
 
@@ -619,9 +598,6 @@
 }
 
 
-/* =========================
-   Provider fit full-width band
-========================= */
 
 .provider-fit-band {
     position: relative;
@@ -647,7 +623,6 @@
         linear-gradient(300deg, transparent 0 74%, rgba(255, 210, 51, 0.055) 74% 75%, transparent 75% 100%);
 }
 
-/* Left skewed photo */
 .provider-fit-band__media {
     position: relative;
     min-height: 520px;
@@ -680,7 +655,6 @@
     filter: saturate(1.04) contrast(1.1);
 }
 
-/* Right content */
 .provider-fit-band__content {
     position: relative;
     z-index: 1;
@@ -712,7 +686,6 @@
     line-height: 1.58;
 }
 
-/* Signals: not cards, one horizontal strip */
 .provider-fit-band__signals {
     margin-top: 42px;
     display: grid;
@@ -899,9 +872,6 @@
     }
 }
 
-/* =========================
-   Service icon belt marquee
-========================= */
 
 .service-icon-belt {
     position: relative;
@@ -1015,7 +985,6 @@
         height: 72px;
     }
 }
-/* Half vertical padding for this exact icon belt section */
 .service-icon-belt.section,
 .service-icon-belt {
     padding-top: 19px !important;
@@ -1031,9 +1000,6 @@
     }
 }
 
-/* =========================
-   Driveway compare lines — no cards inside cards
-========================= */
 
 .driveway-compare-lines {
     position: relative;
@@ -1083,7 +1049,6 @@
     line-height: 1.58;
 }
 
-/* справа не карточки, а линии */
 .driveway-compare-lines__list {
     display: grid;
     border-top: 1px solid rgba(255, 255, 255, 0.14);
@@ -1221,9 +1186,6 @@
     }
 }
 
-/* =========================
-   Driveway compare lines — light version
-========================= */
 
 .driveway-compare-lines--light {
     background:

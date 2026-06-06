@@ -315,7 +315,6 @@
                 try {
                     localStorage.setItem('betonCookieConsent', choice || 'decline');
                 } catch (error) {
-                    // Ignore storage failures and still hide the banner.
                 }
 
                 banner.classList.remove('is-visible');

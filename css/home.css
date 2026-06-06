@@ -6,9 +6,6 @@
     --cta-image: url("../assets/images/cta-concrete.jpg");
 }
 
-/* =========================
-   Home services rail
-========================= */
 
 .home-services-rail {
     overflow: hidden;
@@ -171,9 +168,6 @@
     transform: translateX(4px);
 }
 
-/* =========================
-   Project match panel
-========================= */
 
 .project-match {
     overflow: hidden;
@@ -294,9 +288,6 @@
     min-height: 100%;
 }
 
-/* =========================
-   Surface selector
-========================= */
 
 .surface-selector {
     overflow: hidden;
@@ -472,9 +463,6 @@
     transform: translateX(5px);
 }
 
-/* =========================
-   Verification strip
-========================= */
 
 .verification-strip {
     overflow: hidden;
@@ -535,9 +523,6 @@
     color: var(--color-text-muted);
 }
 
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 1120px) {
     .services-rail {
@@ -1055,7 +1040,6 @@
     transform: translateX(5px);
 }
 
-/* Правая часть как на референсе */
 .services-rail--timeline .services-rail__line {
     position: relative;
     display: grid;
@@ -1085,7 +1069,6 @@
     transition: transform var(--transition);
 }
 
-/* Линия между иконками */
 .services-rail--timeline .rail-service:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1102,7 +1085,6 @@
     transform: none;
 }
 
-/* Точка на линии */
 .services-rail--timeline .rail-service:not(:last-child)::before {
     content: "";
     position: absolute;
@@ -1135,7 +1117,6 @@
     transform: translate(-50%, -50%) scale(1.06);
 }
 
-/* Иконки как на референсе: большие, оранжевые, без фона */
 .services-rail--timeline .rail-service .service-icon {
     position: relative;
     z-index: 4;
@@ -1171,7 +1152,6 @@
     filter: drop-shadow(0 12px 22px rgba(255, 122, 26, 0.28));
 }
 
-/* Текст как на референсе */
 .services-rail--timeline .rail-service strong {
     max-width: 240px;
     margin: 0;
@@ -1256,7 +1236,6 @@
     }
 }
 
-/* Animated connection lines between service icons */
 .services-rail--timeline .rail-service:not(:last-child)::after {
     height: 2px;
     overflow: hidden;
@@ -1267,7 +1246,6 @@
             rgba(5, 5, 5, 0.16));
 }
 
-/* Бегущий свет поверх линии */
 .services-rail--timeline .rail-service:not(:last-child) .service-icon::after {
     content: "";
     position: absolute;
@@ -1289,7 +1267,6 @@
     animation: serviceLineFlow 2.8s linear infinite;
 }
 
-/* Чтобы анимация работала по всей ширине item */
 .services-rail--timeline .rail-service {
     isolation: isolate;
 }
@@ -1298,12 +1275,10 @@
     overflow: visible;
 }
 
-/* Точки тоже слегка живые */
 .services-rail--timeline .rail-service:not(:last-child)::before {
     animation: serviceDotPulse 1.8s ease-in-out infinite;
 }
 
-/* Разная задержка, чтобы не всё мигало одновременно */
 .services-rail--timeline .rail-service:nth-child(2)::before,
 .services-rail--timeline .rail-service:nth-child(2) .service-icon::after {
     animation-delay: 0.35s;
