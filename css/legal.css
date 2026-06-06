@@ -388,3 +388,15 @@
         text-align: center;
     }
 }
+
+.legal-reveal,
+.legal-reveal.is-visible,
+.legal-sidebar,
+.legal-document,
+.legal-block,
+.legal-nav-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition-delay: 0s !important;
+}

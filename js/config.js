@@ -16,6 +16,14 @@ window.SITE_CONFIG = {
         supportHours: 'Mon–Fri, 8:00 AM–7:00 PM'
     },
 
+    brand: {
+        oldName: 'BETON',
+        logoSrc: 'assets/icons/logo.svg',
+        logoAlt: 'BETON concrete service comparison platform logo',
+        logoHomeLabel: 'BETON home',
+        favicon: 'assets/icons/favicon.svg'
+    },
+
     cta: {
         primary: 'Compare Providers',
         secondary: 'View Services',

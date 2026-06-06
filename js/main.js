@@ -14,6 +14,10 @@
         emailLink: '[data-email-link]',
         phoneText: '[data-phone-text]',
         currentYear: '[data-current-year]',
+        logoImage: '[data-logo-image], .site-logo img, .mobile-menu__logo img, .footer-logo img',
+        logoLink: '[data-logo-link], .site-logo, .mobile-menu__logo',
+        favicon: 'link[rel~="icon"]',
+
         mobileToggle: '[data-mobile-toggle]',
         mobileMenu: '#mobile-menu',
         mobileClose: '[data-mobile-close]',
@@ -93,6 +97,112 @@
     function applyCurrentYear() {
         document.querySelectorAll(selectors.currentYear).forEach((element) => {
             setTextContent(element, new Date().getFullYear());
+        });
+    }
+
+    function escapeRegExp(value) {
+        return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function replaceBrandNameInString(value) {
+        if (typeof value !== 'string') {
+            return value;
+        }
+
+        const oldName = config.brand?.oldName || 'BETON';
+        const newName = config.company?.name || oldName;
+
+        if (!oldName || oldName === newName) {
+            return value;
+        }
+
+        return value.replace(new RegExp(escapeRegExp(oldName), 'g'), newName);
+    }
+
+    function applyBranding() {
+        const brand = config.brand || {};
+        const companyName = config.company?.name || 'BETON';
+
+        const logoSrc = brand.logoSrc || 'assets/icons/logo.svg';
+        const logoAlt = brand.logoAlt || `${companyName} logo`;
+        const logoHomeLabel = brand.logoHomeLabel || `${companyName} home`;
+
+        document.querySelectorAll(selectors.logoImage).forEach((image) => {
+            image.setAttribute('src', logoSrc);
+            image.setAttribute('alt', logoAlt);
+        });
+
+        document.querySelectorAll(selectors.logoLink).forEach((link) => {
+            link.setAttribute('aria-label', logoHomeLabel);
+        });
+
+        document.querySelectorAll(selectors.favicon).forEach((icon) => {
+            if (brand.favicon) {
+                icon.setAttribute('href', brand.favicon);
+            }
+        });
+
+        document.title = replaceBrandNameInString(document.title);
+
+        document.querySelectorAll('meta[name="description"]').forEach((meta) => {
+            const content = meta.getAttribute('content');
+
+            if (content) {
+                meta.setAttribute('content', replaceBrandNameInString(content));
+            }
+        });
+    }
+
+    function replaceHardcodedBrandName() {
+        const oldName = config.brand?.oldName || 'BETON';
+        const newName = config.company?.name || oldName;
+
+        if (!oldName || oldName === newName) {
+            return;
+        }
+
+        const ignoredTags = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'SVG', 'PATH', 'RECT', 'CIRCLE']);
+
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+
+                    if (!parent || ignoredTags.has(parent.tagName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    if (!node.nodeValue || !node.nodeValue.includes(oldName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach((node) => {
+            node.nodeValue = replaceBrandNameInString(node.nodeValue);
+        });
+
+        const attributesToReplace = ['alt', 'aria-label', 'title', 'placeholder'];
+
+        document.querySelectorAll('*').forEach((element) => {
+            attributesToReplace.forEach((attribute) => {
+                const value = element.getAttribute(attribute);
+
+                if (value && value.includes(oldName)) {
+                    element.setAttribute(attribute, replaceBrandNameInString(value));
+                }
+            });
         });
     }
 
@@ -617,10 +727,14 @@
     function init() {
         renderServiceLists();
         renderLegalLinks();
+
+        applyBranding();
         applyConfigText();
-        initHeaderScrollState();
         applyContactLinks();
         applyCurrentYear();
+        replaceHardcodedBrandName();
+
+        initHeaderScrollState();
         setActiveNavigation();
         initMobileMenu();
         initDropdownKeyboardSupport();
