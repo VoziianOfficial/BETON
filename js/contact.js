@@ -1,39 +1,7 @@
 'use strict';
 
 (function () {
-    function initContactReveal() {
-        const items = document.querySelectorAll(
-            '.request-checklist__intro, .check-row, .contact-form-copy, .contact-form, .contact-info-card, .abstract-location-card, .request-path-line article, .contact-bottom-strip'
-        );
-
-        if (!items.length) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            items.forEach((item) => item.classList.add('is-visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.14
-        });
-
-        items.forEach((item, index) => {
-            item.classList.add('contact-reveal');
-            item.style.transitionDelay = `${Math.min(index * 55, 260)}ms`;
-            observer.observe(item);
-        });
-    }
+  
 
     function initConsentCheckboxState() {
         const checkbox = document.querySelector('.custom-checkbox input');
@@ -122,11 +90,9 @@
     }
 
     function init() {
-        initContactReveal();
         initConsentCheckboxState();
         initZipInputCleanup();
         initProjectTypeHint();
-        initContactRouteRestart();
     }
 
     if (document.readyState === 'loading') {

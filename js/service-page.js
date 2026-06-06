@@ -1,39 +1,7 @@
 'use strict';
 
 (function () {
-    function initServicePageReveal() {
-        const items = document.querySelectorAll(
-            '.service-intro__content, .service-intro__image, .compare-row, .provider-fit__visual, .provider-fit__content, .provider-fit__item, .service-photo-belt, .service-faq .faq-item'
-        );
-
-        if (!items.length) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            items.forEach((item) => item.classList.add('is-visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.14
-        });
-
-        items.forEach((item, index) => {
-            item.classList.add('service-reveal');
-            item.style.transitionDelay = `${Math.min(index * 55, 260)}ms`;
-            observer.observe(item);
-        });
-    }
+  
 
     function initServicePhotoBeltTouchPause() {
         const belts = document.querySelectorAll('.service-photo-belt');
@@ -107,7 +75,6 @@
     }
 
     function init() {
-        initServicePageReveal();
         initServicePhotoBeltTouchPause();
         initProviderRouteRestart();
         initServiceHeroChips();

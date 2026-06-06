@@ -62,36 +62,9 @@
         });
     }
 
-    function initHomeAnimations() {
-        const animatedItems = document.querySelectorAll('.rail-service, .verification-line article');
-
-        if (!animatedItems.length || !('IntersectionObserver' in window)) {
-            animatedItems.forEach((item) => item.classList.add('is-visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.18
-        });
-
-        animatedItems.forEach((item) => {
-            item.classList.add('reveal-item');
-            observer.observe(item);
-        });
-    }
 
     function init() {
         initSurfaceSelector();
-        initHomeAnimations();
     }
 
     if (document.readyState === 'loading') {

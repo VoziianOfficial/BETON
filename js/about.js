@@ -1,39 +1,7 @@
 'use strict';
 
 (function () {
-    function initAboutReveal() {
-        const items = document.querySelectorAll(
-            '.about-platform__content, .about-platform__panel article, .process-line__item, .local-matching__content, .matching-map, .about-story__photo, .about-story__content'
-        );
-
-        if (!items.length) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            items.forEach((item) => item.classList.add('is-visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.16
-        });
-
-        items.forEach((item, index) => {
-            item.classList.add('about-reveal');
-            item.style.transitionDelay = `${Math.min(index * 55, 260)}ms`;
-            observer.observe(item);
-        });
-    }
+  
 
     function initMatchingMapPulse() {
         const map = document.querySelector('.matching-map');
@@ -66,8 +34,6 @@
     }
 
     function init() {
-        initAboutReveal();
-        initMatchingMapPulse();
         initClickableMarqueeAccessibility();
     }
 

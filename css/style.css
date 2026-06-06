@@ -2447,3 +2447,32 @@ section[id],
         text-align: center;
     }
 }
+
+/* Disable delayed content reveal across the whole site */
+
+.services-reveal,
+.reveal,
+.scroll-reveal,
+.fade-reveal,
+.fade-up,
+[data-reveal],
+[data-animate],
+[data-scroll-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition-delay: 0s !important;
+}
+
+.services-reveal.is-visible,
+.reveal.is-visible,
+.scroll-reveal.is-visible,
+.fade-reveal.is-visible,
+.fade-up.is-visible,
+[data-reveal].is-visible,
+[data-animate].is-visible,
+[data-scroll-reveal].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
