@@ -397,43 +397,88 @@
             </div>
         </section>
 
-        <section class="local-matching section section--dark" aria-labelledby="local-matching-title">
-            <div class="container">
-                <div class="local-matching__grid">
-                    <div class="local-matching__content">
-                        <p class="section-kicker">Local provider matching</p>
-                        <h2 id="local-matching-title">Compare concrete provider options near your project area.</h2>
-                        <p>
-                            Instead of showing a real map, BETON uses project details and location information
-                            to help users think through which provider options may be relevant to the project area.
-                        </p>
-
-                        <div class="local-matching__stats" aria-label="Comparison signals">
-                            <span>ZIP code</span>
-                            <span>Surface type</span>
-                            <span>Project timing</span>
-                            <span>Provider availability</span>
+    <section class="local-signal-section section section--dark" aria-labelledby="local-signal-title">
+        <div class="container">
+            <div class="local-signal">
+                <div class="local-signal__content">
+                    <p class="section-kicker">Local provider matching</p>
+    
+                    <h2 id="local-signal-title">
+                        Compare concrete provider options around your project needs.
+                    </h2>
+    
+                    <p>
+                        BETON helps users organize project details, surface goals, timing, and location signals before
+                        starting a concrete provider comparison path.
+                    </p>
+                </div>
+    
+                <div class="local-signal__list" aria-label="Concrete provider comparison signals">
+                    <div class="local-signal__row">
+                        <div>
+                            <h3>ZIP code and service area</h3>
+                            <p>Location helps shape which independent provider options may be relevant.</p>
                         </div>
-                    </div>
-
-                    <div class="matching-map" aria-label="Abstract local provider matching diagram">
-                        <div class="matching-map__slab">
-                            <span class="matching-dot matching-dot--one"></span>
-                            <span class="matching-dot matching-dot--two"></span>
-                            <span class="matching-dot matching-dot--three"></span>
-                            <span class="matching-dot matching-dot--four"></span>
-
-                            <svg class="matching-route" viewBox="0 0 520 340" aria-hidden="true">
-                                <path d="M90 230C150 120 250 110 315 180C365 232 420 192 455 108" />
+    
+                        <span class="local-signal__icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M32 56S50 43 50 24A18 18 0 0 0 14 24C14 43 32 56 32 56Z" />
+                                <path d="M32 30A6 6 0 1 0 32 18A6 6 0 0 0 32 30Z" />
                             </svg>
-
-                            <div class="matching-map__label matching-map__label--one">Project area</div>
-                            <div class="matching-map__label matching-map__label--two">Provider options</div>
+                        </span>
+                    </div>
+    
+                    <div class="local-signal__row">
+                        <div>
+                            <h3>Concrete surface type</h3>
+                            <p>Driveways, patios, slabs, foundations, and stamped finishes need different provider focus.
+                            </p>
                         </div>
+    
+                        <span class="local-signal__icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M10 38L32 25L54 38L32 51L10 38Z" />
+                                <path d="M10 38V45L32 58L54 45V38" />
+                                <path d="M20 38L32 31L44 38" />
+                            </svg>
+                        </span>
+                    </div>
+    
+                    <div class="local-signal__row">
+                        <div>
+                            <h3>Project timing</h3>
+                            <p>Timeline, access, and preparation needs can affect the quote request path.</p>
+                        </div>
+    
+                        <span class="local-signal__icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M16 16H48V52H16V16Z" />
+                                <path d="M22 12V20" />
+                                <path d="M42 12V20" />
+                                <path d="M16 28H48" />
+                                <path d="M24 38H36" />
+                            </svg>
+                        </span>
+                    </div>
+    
+                    <div class="local-signal__row">
+                        <div>
+                            <h3>Provider availability</h3>
+                            <p>BETON helps users compare options without presenting itself as the company doing the work.
+                            </p>
+                        </div>
+    
+                        <span class="local-signal__icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M32 8L52 18V32C52 44 44 52 32 56C20 52 12 44 12 32V18L32 8Z" />
+                                <path d="M23 32L29 38L42 25" />
+                            </svg>
+                        </span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <section class="about-story section section--light" aria-labelledby="about-story-title">
             <div class="container">
