@@ -2480,3 +2480,66 @@ body .page-hero__inner {
                 rgba(0, 0, 0, 0.3) 100%) !important;
     }
 }
+
+/* Fix burger icon alignment on mobile */
+
+.mobile-toggle {
+    position: relative;
+    display: none;
+    place-items: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.mobile-toggle span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    display: block;
+    border-radius: 999px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: translateX(-50%);
+}
+
+.mobile-toggle span::before {
+    top: -7px;
+}
+
+.mobile-toggle span::after {
+    top: 7px;
+}
+
+/* Когда меню открыто — крестик тоже ровно по центру */
+.mobile-toggle[aria-expanded="true"] span {
+    background: transparent;
+}
+
+.mobile-toggle[aria-expanded="true"] span::before {
+    top: 0;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.mobile-toggle[aria-expanded="true"] span::after {
+    top: 0;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+@media (max-width: 920px) {
+    .mobile-toggle {
+        display: grid;
+    }
+}
