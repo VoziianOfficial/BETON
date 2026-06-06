@@ -1,40 +1,6 @@
 'use strict';
 
 (function () {
-    function initLegalReveal() {
-        const items = document.querySelectorAll(
-            '.legal-sidebar, .legal-document, .legal-block, .legal-nav-card'
-        );
-
-        if (!items.length) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            items.forEach((item) => item.classList.add('is-visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.12
-        });
-
-        items.forEach((item, index) => {
-            item.classList.add('legal-reveal');
-            item.style.transitionDelay = `${Math.min(index * 45, 220)}ms`;
-            observer.observe(item);
-        });
-    }
-
     function initLegalSidebarScroll() {
         const sidebarLinks = document.querySelectorAll('.legal-sidebar a[href^="#"]');
 
@@ -126,7 +92,6 @@
     }
 
     function init() {
-        initLegalReveal();
         initLegalSidebarScroll();
         initActiveLegalSection();
         initLegalPrintButton();

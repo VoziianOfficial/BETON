@@ -2445,7 +2445,6 @@ section[id],
     padding-right: 18px;
 }
 
-/* FINAL: clean black medium hero overlay, no orange glow */
 
 body .page-hero::before {
     content: "";
