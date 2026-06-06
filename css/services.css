@@ -687,7 +687,7 @@
     inset: auto 0 0 0;
     z-index: 0;
     width: 100%;
-    height: 46%;
+    height: 100%;
     object-fit: cover;
     opacity: 0.68;
     filter: saturate(0.88) contrast(1.05);

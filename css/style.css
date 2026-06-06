@@ -2444,3 +2444,40 @@ section[id],
 .mobile-menu__service-list a {
     padding-right: 18px;
 }
+
+/* FINAL: clean black medium hero overlay, no orange glow */
+
+body .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.56) 45%,
+            rgba(0, 0, 0, 0.28) 100%),
+        linear-gradient(180deg,
+            rgba(0, 0, 0, 0.18) 0%,
+            rgba(0, 0, 0, 0.04) 45%,
+            rgba(0, 0, 0, 0.28) 100%) !important;
+}
+
+body .page-hero__inner {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 920px) {
+    body .page-hero::before {
+        background:
+            linear-gradient(90deg,
+                rgba(0, 0, 0, 0.76) 0%,
+                rgba(0, 0, 0, 0.58) 58%,
+                rgba(0, 0, 0, 0.36) 100%),
+            linear-gradient(180deg,
+                rgba(0, 0, 0, 0.16) 0%,
+                rgba(0, 0, 0, 0.06) 45%,
+                rgba(0, 0, 0, 0.3) 100%) !important;
+    }
+}
